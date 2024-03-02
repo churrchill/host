@@ -65,7 +65,7 @@ def add():
     if request.method == "POST":
         # print(request.form)
         name = request.files["filename"]
-        name_of_file = f"{name.filename.split(".")[0]}.txt"
+        name_of_file = f"{name.filename.split('.')[0]}.txt"
         with open(name_of_file, "w", encoding="utf-8") as f:
             g = bytes(name.stream.read())
             file = reconcillation.convert_to_utf_8(g)
